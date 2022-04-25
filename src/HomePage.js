@@ -46,7 +46,8 @@ const HomePage = () => {
                         margin: 'auto',
                     }}>
                         <Button
-                            variant="contained" 
+                            variant="contained"
+                            size="large"
                             onClick={() => {
                             }}
 

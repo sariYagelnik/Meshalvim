@@ -1,8 +1,12 @@
 import { Grid, TextField, FormLabel, Button } from "@mui/material";
 import Swal from "sweetalert2"
+import { useState } from "react";
 
 const EmployerDetails = () => {
-    return ( 
+
+    const [name, setName] = useState('')
+
+    return (
         <>
             <Grid container direction="column" sx={{
                 p: 5
@@ -21,52 +25,59 @@ const EmployerDetails = () => {
                             color: '#1976d2',
                         }}
                     >פרטי מעסיק</FormLabel>
+
+                    <Grid item sx={{
+                        p: 1,
+                        margin: 'auto',
+                    }}>
+                        <TextField name="name" id="name" label="שם העסק" variant="standard" />
+                    </Grid>
+
+                    <Grid item sx={{
+                        p: 1,
+                        margin: 'auto',
+                    }}>
+                        <TextField 
+                        // pattern=/^[0-9]/
+                        name="tel" type="text" id="tel" label="טלפון" variant="standard" />
+                    </Grid>
+
+                    <Grid item sx={{
+                        p: 1,
+                        margin: 'auto',
+                    }}>
+                        <TextField name="email" type="email" id="email" label="email" variant="standard" />
+                    </Grid>
+
+                    <Grid item sx={{
+                        p: 1,
+                        margin: 'auto',
+                    }}>
+                        <TextField name="password" id="password" type="password" label="סיסמא" variant="standard" />
+                    </Grid>
+
+                    <Grid item sx={{
+                        p: 1,
+                        margin: 'auto',
+                    }}>
+                        <Button
+                            variant="contained"
+                            onClick={() => {
+                                Swal.fire({
+                                    title:'!!!שים לב',
+                                    text: 'כעת עליך למלא את הטופס על פי הדרישות על מנת שהתוצאה תצא מושלמת השתדל לדייק בנתונים ככל האפשר' ,
+                                    icon: 'info',
+                                    confirmButtonText: 'המשך',
+                                    confirmButtonColor: '#3085d6',
+                                })
+                            }}
+
+                        >להמשך התהליך</Button>
+                    </Grid >
                 </Grid>
-                <Grid item sx={{
-                    p: 1,
-                    margin: 'auto',
-                }}>
-                    <TextField name="name" id="name" label="שם העסק" variant="standard" />
-                </Grid>
-
-                <Grid item sx={{
-                    p: 1,
-                    margin: 'auto',
-                }}>
-                    <TextField name="tel" type="text" id="tel" label="טלפון" variant="standard" />
-                </Grid>
-
-                <Grid item sx={{
-                    p: 1,
-                    margin: 'auto',
-                }}>
-                    <TextField name="email" type="email" id="email" label="email" variant="standard" />
-                </Grid>
-
-                <Grid item sx={{
-                    p: 1,
-                    margin: 'auto',
-                }}>
-                    <TextField name="password" id="password" type="password" label="סיסמא" variant="standard" />
-                </Grid>
-
-                <Grid item sx={{
-                    p: 1,
-                    margin: 'auto',
-                }}>
-                    <Button
-                        variant="contained"
-                        onClick={() => {
-                            Swal.fire(' **** ', '**************', 'info')
-
-                        }}
-
-                    >להרשמה</Button>
-                </Grid >
-
             </Grid >
         </>
-     );
+    );
 }
- 
+
 export default EmployerDetails;
