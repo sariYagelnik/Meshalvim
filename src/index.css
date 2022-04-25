@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*{
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+/*
+*:hover,:active,:focus{
+  color: rgb(224, 0, 75);
+}
+TextField,TextField:hover,TextField:active,TextField:focus{
+  color: rgb(224, 0, 75);
+  background-color: rgb(224, 0, 75);
+} */

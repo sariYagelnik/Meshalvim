@@ -5,10 +5,12 @@ import LogIn from './LogIn';
 import HomePage from './HomePage';
 import EmployerDetails from './EmployerDetails';
 import Manage from './Manage';
+import DisabledForm from './DisabledForm';
 
 function App() {
   return (
     <div>
+      <DisabledForm/>
       <Manage/>
       <HomePage/>
       <SignIn/>

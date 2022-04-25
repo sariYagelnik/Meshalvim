@@ -17,6 +17,8 @@ const EmployerDetails = () => {
                         border: '2px solid lightGrey',
                         borderRadius: '1vw',
                         margin: 'auto',
+                        width:'50vw'
+
                     }}>
 
                     <FormLabel
@@ -30,7 +32,7 @@ const EmployerDetails = () => {
                         p: 1,
                         margin: 'auto',
                     }}>
-                        <TextField name="name" id="name" label="שם העסק" variant="standard" />
+                        <TextField fullWidth name="name" id="name" label="שם העסק" variant="standard" />
                     </Grid>
 
                     <Grid item sx={{
@@ -38,6 +40,7 @@ const EmployerDetails = () => {
                         margin: 'auto',
                     }}>
                         <TextField 
+                        fullWidth
                         // pattern=/^[0-9]/
                         name="tel" type="text" id="tel" label="טלפון" variant="standard" />
                     </Grid>
@@ -46,14 +49,14 @@ const EmployerDetails = () => {
                         p: 1,
                         margin: 'auto',
                     }}>
-                        <TextField name="email" type="email" id="email" label="email" variant="standard" />
+                        <TextField fullWidth name="email" type="email" id="email" label="email" variant="standard" />
                     </Grid>
 
                     <Grid item sx={{
                         p: 1,
                         margin: 'auto',
                     }}>
-                        <TextField name="password" id="password" type="password" label="סיסמא" variant="standard" />
+                        <TextField fullWidth name="password" id="password" type="password" label="סיסמא" variant="standard" />
                     </Grid>
 
                     <Grid item sx={{

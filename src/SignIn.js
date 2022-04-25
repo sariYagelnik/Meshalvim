@@ -5,11 +5,11 @@ import swal from 'sweetalert2';
 
 const SignIn = () => {
 
-    const [value, setValue] = useState('lookingForJob');
+    const [status, setStatus] = useState('lookingForJob');
     const [name, setName] = useState('')
 
     const handleRadioChange = (event) => {
-        setValue(event.target.value);
+        setStatus(event.target.value);
     }
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -26,6 +26,8 @@ const SignIn = () => {
                 <Grid item sx={{
                     p: 1,
                     margin: 'auto',
+                    width:'50vw'
+
                 }}>
                     <Grid
                         sx={{
@@ -46,14 +48,14 @@ const SignIn = () => {
                             p: 1,
                             margin: 'auto',
                         }}>
-                            <TextField name="name" id="name" label="שם" variant="standard" onChange={(e) => setName(e.target.value)} />
+                            <TextField fullWidth name="name" id="name" label="שם" variant="standard" onChange={(e) => setName(e.target.value)} />
                         </Grid>
 
                         <Grid item sx={{
                             p: 1,
                             margin: 'auto',
                         }}>
-                            <TextField id="password" type="password" label="סיסמא" variant="standard" />
+                            <TextField fullWidth id="password" type="password" label="סיסמא" variant="standard" />
                         </Grid>
 
                         <Grid item sx={{
@@ -61,6 +63,7 @@ const SignIn = () => {
                             margin: 'auto',
                         }}>
                             <TextField
+                                fullWidth
                                 {...register("email", {
                                     pattern: { value: /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i, message: 'Please enter a valid email' }
                                 })}
@@ -78,7 +81,7 @@ const SignIn = () => {
                                 <FormLabel>סמן סטטוס</FormLabel>
                                 <RadioGroup
                                     name="controlled-radio-buttons-group"
-                                    value={value}
+                                    value={status}
                                     onChange={handleRadioChange}
                                 >
                                     <FormControlLabel value="employer" control={<Radio />} label="מעסיק" />

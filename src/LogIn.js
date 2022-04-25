@@ -16,6 +16,8 @@ const LogIn = () => {
                     border: '2px solid lightGrey',
                     borderRadius: '1vw',
                     margin: 'auto',
+                    width:'50vw'
+
                 }}>
 
                 <FormLabel
@@ -29,7 +31,7 @@ const LogIn = () => {
                     p: 1,
                     margin: 'auto',
                 }}>
-                    <TextField name="name" id="name" label="שם" variant="standard" 
+                    <TextField fullWidth name="name" id="name" label="שם" variant="standard" 
                         onChange={(e)=>setName(e.target.value)}/>
                 </Grid>
 
@@ -37,7 +39,7 @@ const LogIn = () => {
                     p: 1,
                     margin: 'auto',
                 }}>
-                    <TextField id="password" type="password" label="סיסמא" variant="standard" />
+                    <TextField fullWidth id="password" type="password" label="סיסמא" variant="standard" />
                 </Grid>
 
                 <Grid item sx={{
